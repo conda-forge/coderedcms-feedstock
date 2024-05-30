@@ -1,5 +1,5 @@
 {% set name = "coderedcms" %}
-{% set version = "3.0.4" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz
-  sha256: 97692059cea4ea35a50866c0a3fca977cc9da8967d8e0d94681fd09c58f55085
+  sha256: df7e86bcf4c4bcc054754aa5d9d0424ffcec5018d5533e65fabfc106788da2a8
 
 build:
   entry_points:
