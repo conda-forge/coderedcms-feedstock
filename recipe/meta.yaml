@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz
   sha256: a1873256eb829071875332d9ff5089c090f95facd78e1d85dac7e20be35cedf9
 
 build:
@@ -18,10 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - beautifulsoup4 >=4.8,<4.13
     - django-eventtools ==1.0.*
     - django-bootstrap5 ==24.3
@@ -39,6 +40,7 @@ test:
     - pip check
     - coderedcms help
   requires:
+    - python {{ python_min }}  
     - pip
 
 about:
