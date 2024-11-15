@@ -1,13 +1,13 @@
 {% set name = "coderedcms" %}
-{% set version = "4.0.1" %}
+{% set version = "4.1.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz
-  sha256: 69c599927a137258e938e2a0342893d625edc146c15b47ab6abaa9eed429fb47
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz
+  sha256: a1873256eb829071875332d9ff5089c090f95facd78e1d85dac7e20be35cedf9
 
 build:
   entry_points:
@@ -18,17 +18,20 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - beautifulsoup4 >=4.8,<4.13
     - django-eventtools ==1.0.*
-    - django-bootstrap5 ==24.2
+    - django-bootstrap5 ==24.3
     - django >=4.2,<6.0
     - geocoder ==1.38.*
-    - icalendar ==5.0.*
-    - wagtail >=6.0,<7.0
+    - icalendar ==6.0.*
+# icalendar 6.0.1 requires tzdata, which is not installed
+    - python-tzdata
+    - wagtail >=6.3,<7.0
     - wagtail-cache >=2.4,<3
     - wagtail-seo >=2.5,<3
 
@@ -39,6 +42,7 @@ test:
     - pip check
     - coderedcms help
   requires:
+    - python {{ python_min }}  
     - pip
 
 about:
@@ -46,7 +50,7 @@ about:
   summary: Wagtail-based CMS by CodeRed for building marketing websites.
   license: MIT AND BSD-3-Clause
   license_file:
-    - LICENSE
+    - LICENSE.txt
     - coderedcms/wagtail_flexible_forms/LICENSE
     - coderedcms/static/coderedcms/vendor/bootstrap/LICENSE
 
