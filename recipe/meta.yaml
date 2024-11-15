@@ -48,7 +48,7 @@ about:
   summary: Wagtail-based CMS by CodeRed for building marketing websites.
   license: MIT AND BSD-3-Clause
   license_file:
-    - LICENSE
+    - LICENSE.txt
     - coderedcms/wagtail_flexible_forms/LICENSE
     - coderedcms/static/coderedcms/vendor/bootstrap/LICENSE
 
