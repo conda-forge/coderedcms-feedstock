@@ -1,5 +1,5 @@
 {% set name = "coderedcms" %}
-{% set version = "4.1.0" %}
+{% set version = "4.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/coderedcms-{{ version }}.tar.gz
-  sha256: a1873256eb829071875332d9ff5089c090f95facd78e1d85dac7e20be35cedf9
+  sha256: f6c07d3f5860585695736b3f4f7efefd08c40166c51d2723e5ec53ca2c404130
 
 build:
   entry_points:
@@ -28,7 +28,7 @@ requirements:
     - django-bootstrap5 ==24.3
     - django >=4.2,<6.0
     - geocoder ==1.38.*
-    - icalendar ==6.0.*
+    - icalendar ==6.1.*
 # icalendar 6.0.1 requires tzdata, which is not installed
     - python-tzdata
     - wagtail >=6.3,<7.0
@@ -42,7 +42,7 @@ test:
     - pip check
     - coderedcms help
   requires:
-    - python {{ python_min }}  
+    - python {{ python_min }}
     - pip
 
 about:
