@@ -11,7 +11,7 @@ source:
 
 build:
   entry_points:
-    - coderedcms=coderedcms.bin.coderedcms:main
+    - coderedcms = coderedcms.bin.coderedcms:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
@@ -20,9 +20,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=65.5
   run:
-    - wagtail-flexible-forms ==2.*
     - python >={{ python_min }}
     - beautifulsoup4 >=4.8,<4.13
     - django-eventtools ==1.0.*
@@ -34,6 +33,7 @@ requirements:
     - python-tzdata
     - wagtail >=6.3,<7.0
     - wagtail-cache >=2.4,<3
+    - wagtail-flexible-forms ==2.*
     - wagtail-seo ==3.*
 
 test:
