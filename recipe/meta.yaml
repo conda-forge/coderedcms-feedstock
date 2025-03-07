@@ -52,7 +52,6 @@ about:
   license: MIT AND BSD-3-Clause
   license_file:
     - LICENSE.txt
-    - coderedcms/wagtail_flexible_forms/LICENSE
     - coderedcms/static/coderedcms/vendor/bootstrap/LICENSE
 
 extra:
