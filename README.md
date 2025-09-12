@@ -5,9 +5,11 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coderedcms-feed
 
 Home: https://github.com/coderedcorp/coderedcms
 
-Package license: MIT AND BSD-3-Clause
+Package license: BSD-3-Clause AND MIT
 
-Summary: Wagtail-based CMS by CodeRed for building marketing websites.
+Summary: Wagtail + CodeRed Extensions enabling rapid development of marketing-focused websites.
+
+Development: https://github.com/coderedcorp/coderedcms
 
 Current build status
 ====================
